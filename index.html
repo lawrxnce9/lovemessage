@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love 💕</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hearts-background"></div>
+    
+    <!-- Page 1: Passcode Entry -->
+    <div id="passcode-page" class="page active">
+        <div class="container">
+            <h1 class="fade-in">🔒</h1>
+            <h2 class="fade-in">Enter the Code</h2>
+            <p class="subtitle fade-in">Only someone special knows this...</p>
+            <input type="password" id="passcode-input" placeholder="Enter passcode" maxlength="4">
+            <button onclick="checkPasscode()">Unlock</button>
+            <p id="error-message" class="error"></p>
+        </div>
+    </div>
+
+    <!-- Page 2: Love Message -->
+    <div id="message-page" class="page">
+        <div class="container">
+            <h1 class="fade-in">💕 To My Beautiful Girl 💕</h1>
+            <div class="love-message fade-in">
+                <p>From the moment you walked into my life, everything changed. You turned my ordinary days into extraordinary adventures, my silence into laughter, and my heart into a place where love truly lives.</p>
+                
+                <p>Every second with you feels like a gift I never knew I needed. Your smile lights up my darkest days, your laugh is my favorite melody, and your presence is my greatest comfort.</p>
+                
+                <p>You are my best friend, my confidant, my peace in the chaos, and my excitement in the calm. With you, I've discovered what it means to truly love someone - not just with words, but with every beat of my heart.</p>
+                
+                <p>I fall for you more deeply every single day. The way you care, the way you love, the way you simply exist in this world - it all makes me the luckiest person alive.</p>
+                
+                <p>You are my today and all of my tomorrows. My forever and always.</p>
+                
+                <p class="signature">Yours eternally,<br>Your Boy 💖</p>
+            </div>
+            <button onclick="showGallery()" class="continue-btn">Continue ➜</button>
+        </div>
+    </div>
+
+    <!-- Page 3: Photo Gallery -->
+    <div id="gallery-page" class="page">
+        <div class="container">
+            <h1 class="fade-in">Our Beautiful Moments 📸</h1>
+            <div class="gallery">
+                <div class="photo-card fade-in">
+                    <img src="/Users/lawrenceowusu/Downloads/IMG_0888.jpeg" alt="Our moment 1">
+                    <p class="caption">"In your arms is where I belong, wrapped in love and endless warmth"</p>
+                </div>
+                <div class="photo-card fade-in">
+                    <img src="images/photo2.jpg" alt="Our moment 2">
+                    <p class="caption">"That perfect day on the water, where every moment with you felt like a dream"</p>
+                </div>
+                <div class="photo-card fade-in">
+                    <img src="images/photo3.jpg" alt="Our moment 3">
+                    <p class="caption">"From our first adventure together to forever - you're my favorite hello and hardest goodbye"</p>
+                </div>
+            </div>
+            <button onclick="showQuestion()" class="continue-btn">Next ➜</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Valentine Question -->
+    <div id="question-page" class="page">
+        <div class="container">
+            <h1 class="fade-in big-question">Will You Be My Valentine? 💘</h1>
+            <p class="warning fade-in">⚠️ Don't choose NO ⚠️</p>
+            <div class="button-container">
+                <button onclick="sayYes()" class="yes-btn">Yes! 💕</button>
+                <button id="no-btn" class="no-btn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Celebration -->
+    <div id="celebration-page" class="page">
+        <div class="container celebration">
+            <h1 class="fade-in">I Knew You'd Say Yes! 🎉</h1>
+            <div class="hearts-explosion"></div>
+            <p class="fade-in celebration-text">You've made me the happiest person in the world! ❤️</p>
+            <p class="fade-in celebration-text">Happy Valentine's Day, my love! 💕</p>
+            <div class="emoji-rain">💖💕❤️💗💝����💓💞💖💕❤️💗💝💘💓💞</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

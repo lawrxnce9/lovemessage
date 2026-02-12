@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 50%, #f67280 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Floating Hearts Background */
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hearts-background::before,
+.hearts-background::after {
+    content: '💕';
+    position: absolute;
+    font-size: 30px;
+    animation: float 15s infinite;
+    opacity: 0.3;
+}
+
+.hearts-background::before {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts-background::after {
+    content: '💖';
+    left: 80%;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+/* Page Transitions */
+.page {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.page.active {
+    display: block;
+    animation: fadeInPage 1s ease-in;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Passcode Page */
+h1 {
+    color: #e63946;
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #d62839;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+input[type="password"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+    border: 3px solid #ff6b9d;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    outline: none;
+    letter-spacing: 10px;
+}
+
+button {
+    background: linear-gradient(135deg, #ff6b9d, #e63946);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.6);
+}
+
+.error {
+    color: #e63946;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Love Message Page */
+.love-message {
+    text-align: left;
+    line-height: 2;
+    color: #333;
+    font-size: 1.1em;
+    margin: 30px 0;
+}
+
+.love-message p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #e63946;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.continue-btn {
+    margin-top: 30px;
+}
+
+/* Photo Gallery */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.photo-card:hover {
+    transform: scale(1.02);
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.caption {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Valentine Question */
+.big-question {
+    font-size: 2.5em;
+    color: #e63946;
+}
+
+.warning {
+    color: #ff6b9d;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.button-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #ff6b9d, #e63946);
+    font-size: 1.5em;
+    padding: 20px 50px;
+}
+
+.no-btn {
+    background: linear-gradient(135deg, #999, #666);
+    font-size: 1.5em;
+    padding: 20px 50px;
+    position: relative;
+    transition: all 0.1s;
+}
+
+/* Celebration Page */
+.celebration {
+    position: relative;
+    overflow: hidden;
+}
+
+.celebration h1 {
+    font-size: 3em;
+    color: #e63946;
+}
+
+.celebration-text {
+    font-size: 1.5em;
+    color: #d62839;
+    margin: 20px 0;
+}
+
+.hearts-explosion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    animation: explode 1s ease-out;
+}
+
+.hearts-explosion::before {
+    content: '💕💖❤️💗💝💘';
+    animation: spin 2s linear infinite;
+}
+
+@keyframes explode {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.emoji-rain {
+    font-size: 2em;
+    letter-spacing: 20px;
+    animation: rain 3s linear infinite;
+    margin-top: 30px;
+}
+
+@keyframes rain {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    .big-question {
+        font-size: 1.8em;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .yes-btn, .no-btn {
+        width: 200px;
+    }
+    
+    .love-message {
+        font-size: 1em;
+    }
+}
